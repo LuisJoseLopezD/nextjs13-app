@@ -36,11 +36,11 @@ async function Home() {
     }
 
     return (
-        <main>
-            {Object.keys(users).length === 0 ?
-                <p className="font-normal p-2">No users added</p>
+        <main className="p-2">
+            {users ?
+                users.map?.((user: Usuario) => renderItem(user))
                 :
-                users?.map?.((user: Usuario) => renderItem(user))
+                <p>No users added...</p>
             }
         </main>
     )
